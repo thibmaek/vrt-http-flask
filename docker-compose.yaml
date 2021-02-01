@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  vrt_flask:
+    container_name: vrt_flask
+    build: .
+    ports:
+      - "5000:5000"
