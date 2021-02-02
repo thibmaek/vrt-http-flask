@@ -1,4 +1,4 @@
-pyvrt==1.7.0
+pyvrt==1.7.1
 flask==1.1.2
 livereload==2.0.0
 
