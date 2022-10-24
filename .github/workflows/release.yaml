@@ -20,7 +20,7 @@ jobs:
       - name: 'Build & push image'
         run: |
           docker build -t ghcr.io/${{ github.repository }}:${{ github.ref_name }} .
-          docker push ghcr.io/${{ github.repository }}:${{ github.ref }}
+          docker push ghcr.io/${{ github.repository }}:${{ github.ref_name }}
 
           docker build -t ghcr.io/${{ github.repository }}:latest .
-          docker push ghcr.io/${{ github.repository }}:${{ github.ref }}
+          docker push ghcr.io/${{ github.repository }}:latest
