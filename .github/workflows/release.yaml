@@ -1,0 +1,26 @@
+name: 'Release'
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: 'Login to GitHub Container Registry'
+        uses: docker/login-action@master
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_REGISTRY_TOKEN }}
+
+      - name: 'Build and Push Docker Image'
+        uses: docker/build-push-action@master
+        with:
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref }}
+            ghcr.io/${{ github.repository }}:latest

@@ -1,4 +1,6 @@
-install:
+dependencies:
+	@echo "Installing dependencies..."
+	asdf install
 	pip install -r requirements.txt
 
 dev:
