@@ -1,5 +1,5 @@
 pyvrt==1.7.1
-flask==2.2.2
+flask==2.3.2
 livereload==2.0.0
 
 black
